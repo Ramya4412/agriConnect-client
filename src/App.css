@@ -1,0 +1,190 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  top: flex-end;
+  align-items: top;
+  padding: 1px;
+  background-color: #4b7a3b;
+  color: white;
+}
+
+.login-signup {
+  display: flex;
+  gap: 10px;
+}
+
+.login, .signup {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #008c45;
+}
+
+.login:hover, .signup:hover {
+  background-color: #0b0b0b;
+}
+
+/* Navigation */
+.nav {
+  background-color: #3e6630;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.nav-links a:hover {
+  color: #ddd;
+}
+
+/* Mobile Navigation */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 5px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: #3e6630;
+    position: absolute;
+    left: 10;
+    top: 50px;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1586771107445-d3ca888129ff?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGFncmljdXR1cmV8ZW58MHx8MHx8fDA%3D') no-repeat center center/cover;
+  color: white;
+  padding: 100px 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero:hover {
+  transform: scale(1.05);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+  background-color: white;
+  color: #28a745;
+  transform: scale(1.1);
+}
+
+.about, .services, .key-features {
+  padding: 50px 20px;
+  background: rgb(225, 225, 225);
+  color: black;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.about:hover, .services:hover, .key-features:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.service {
+  margin-top: 20px;
+  transition: transform 0.3s;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+}
+
+.about img, .services img, .key-features img {
+  width: 100%;
+  max-width: 300px; /* Reduced max-width for smaller images */
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature {
+  flex: 0 1 calc(25% - 40px);
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature img {
+  width: 100px; /* Set width for logo images */
+  height: auto;
+  margin-bottom: 10px;
+}
