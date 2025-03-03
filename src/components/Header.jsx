@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 export default function App() {
   return (
@@ -7,7 +7,7 @@ export default function App() {
       {/* Header */}
       <header className="header">
         <div className="login-signup">
-          <a href="#login" className="login">Login</a>
+          <Link to="/LoginForm" className="login">Login</Link>
           <a href="#signup" className="signup">Sign Up</a>
         </div>
       </header>
@@ -19,9 +19,10 @@ export default function App() {
         {/* Navigation Links */}
         <ul className="nav-links">
           <li><a href="#">HOME</a></li>
-          <li><a href="#">MARKET</a></li>
-          <li><a href="#">CROP CONVERTER</a></li>
           <li><a href="#">ABOUT US</a></li>
+          <li><a href="#">PROFILE</a></li>
+          <li><a href="#">PRODUCT</a></li>
+          <li><a href="#">ORDERS</a></li>
         </ul>
       </nav>
     </>
