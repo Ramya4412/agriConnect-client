@@ -13,7 +13,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="footer" style={styles.footer}>
+        <footer className="footer min-h-screen" style={styles.footer}>
             {/* Subscription Section */}
             <div className="subscription" style={styles.subscription}>
                 <h2>Stay Connected with Agriconnect</h2>

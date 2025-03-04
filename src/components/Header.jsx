@@ -7,8 +7,8 @@ export default function App() {
       {/* Header */}
       <header className="header">
         <div className="login-signup">
-          <Link to="/LoginForm" className="login">Login</Link>
-          <a href="#signup" className="signup">Sign Up</a>
+          <Link to="/LoginForm" className="bg-green-900 p-3 font-bold ">Login</Link>
+          <Link to="/signup" className="bg-green-900">Sign Up</Link>
         </div>
       </header>
 
