@@ -20,7 +20,9 @@ export default function Header() {
 
         {/* Login / Signup Buttons */}
         <div className="space-x-4 hidden md:flex">
-          {isLoggedIn&& <Link>Logout</Link>}
+          {isLoggedIn && <Link to="/profile" className="bg-white text-green-800 px-4 py-2 rounded-lg font-bold hover:bg-gray-200 transition">
+            Edit Profile</Link>}
+          {isLoggedIn&& <Link onClick={logout}>Logout</Link>}
           {!isLoggedIn &&<Link to="/LoginForm" className="bg-white text-green-800 px-4 py-2 rounded-lg font-bold hover:bg-gray-200 transition">
             Login
           </Link>
