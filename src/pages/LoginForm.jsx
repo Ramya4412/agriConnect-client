@@ -1,6 +1,9 @@
 import { useState } from "react";
-
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 export default function LoginForm() {
+  const nav = useNavigate();
+  const { login, setUser } = useAuth();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -24,9 +27,11 @@ export default function LoginForm() {
         alert("User not found");
         return;
       }
-      console.log(user)
+      login();
+      setUser(user);
+      nav("/")
     }catch(err){
-
+      alert("Something went wrong: " + err);
     }
     console.log(formData);
   };
