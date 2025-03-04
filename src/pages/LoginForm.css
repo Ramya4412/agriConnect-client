@@ -16,7 +16,7 @@
     text-align: center;
     width: 100%;
     max-width: 400px;
-    color: #000000;
+    color: #050404;
   }
   
   .login-logo {
@@ -28,7 +28,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #000000;
+    color: #080707;
   }
   
   .login-form {
@@ -47,7 +47,7 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
     display: block;
-    color: #090b0a;
+    color: #050706;
   }
   
   .input-field {
@@ -60,7 +60,7 @@
   }
   
   .input-field:focus {
-    border-color: #410cbb;
+    border-color: #1b0352;
     outline: none;
     color: #f6f1f1;
   }
