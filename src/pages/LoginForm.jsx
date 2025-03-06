@@ -27,6 +27,10 @@ export default function LoginForm() {
         alert("User not found");
         return;
       }
+      if(user.password !== formData.password){
+        alert("Incorrect password");
+        return;
+      }
       login();
       setUser(user);
       nav("/")
