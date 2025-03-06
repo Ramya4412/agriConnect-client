@@ -21,8 +21,10 @@ export default function LoginForm() {
     e.preventDefault();
     try{
       const res = await fetch("http://localhost:3000/users");
+      console.log("some")
       const resjson = await res.json();
       const user = resjson.find((user) => user.email === formData.email);
+      console.log(user)
       if (!user) {
         alert("User not found");
         return;
