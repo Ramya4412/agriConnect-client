@@ -16,6 +16,7 @@ export default function Header() {
           <li><Link to="/" className="hover:text-green-300 transition">Home</Link></li>
           <li><Link to="/about" className="hover:text-green-300 transition">About</Link></li>
           <li><Link to="/contact" className="hover:text-green-300 transition">Contact</Link></li>
+          <li><Link to="/market" className="hover:text-green-300 transition">Market</Link></li>
         </ul>
 
         {/* Login / Signup Buttons */}

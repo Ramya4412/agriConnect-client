@@ -5,6 +5,7 @@ export default function Layout(){
     return <>
     <Header/>
     <Outlet/>
+    {/* <h1 style={{height: "100vh"}}>HI</h1> */}
     <Footer/>
     </>
 }

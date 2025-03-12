@@ -7,6 +7,7 @@ import LoginForm from './pages/LoginForm';
 import Layout from './pages/layout';
 import Registration from './pages/Registration';
 import Profile from './pages/Profile';
+import Market from './pages/Market';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       {path:"LoginForm", element:<LoginForm/>},
       {path:"SignUp", element:<Registration/>},
       {path:"Profile", element:<Profile/>},
+      {path:"Market", element:<Market/>}
       
     ]
   }
