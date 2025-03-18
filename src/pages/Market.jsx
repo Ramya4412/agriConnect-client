@@ -63,6 +63,38 @@ const products = [
   { id: 58, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
   { id: 59, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
   { id: 60, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
+  { id: 61, name: 'Sun-kist', price: '₹450/L', image: '/Sun-kist.jpg', category:'Juices and Beverages'},
+  { id: 62, name: 'Berry bliss', price: '₹300/L', image: '/Berry bliss.jpg', category:'Juices and Beverages'},
+  { id: 63, name: 'Tropical hormony', price: '₹400/L', image: '/Tropical hormony.jpg', category:'Juices and Beverages'},
+  { id: 64, name: 'Golden Glow', price: '₹350/L', image: '/Golden Glow.jpg', category:'Juices and Beverages'},
+  { id: 65, name: 'Pomogranate power', price: '₹250/L', image: '/pomogranate power.jpg', category:'Juices and Beverages'},
+  { id: 66, name: 'Herbal infuse', price: '₹200/L', image: '/herbal infuse.jpg', category:'Juices and Beverages'},
+  { id: 67, name: 'Golden Root Tonic', price: '₹200/L', image: '/Golden Root Tonic.jpg', category:'Juices and Beverages'},
+  { id: 68, name: 'Revive Brew', price: '₹250/L', image: '/Revive Brew.jpg', category:'Juices and Beverages'},
+  { id: 69, name: 'Zen Bloom', price: '₹250/L', image: '/Zen Bloom.jpg', category:'Juices and Beverages'},
+  { id: 70, name: 'Calm Elixir', price: '₹200/L', image: '/Calm Elixir.jpg', category:'Juices and Beverages'},
+  { id: 71, name: 'Golden termeric latte', price: '₹200/L', image: '/Golden termeric latte.jpg', category:'Juices and Beverages'},
+  { id: 72, name: 'Lemon Honey Detox Water', price: '₹200/L', image: '/Lemon Honey Detox Water.jpg', category:'Juices and Beverages'},
+  { id: 74, name: 'Matcha Green Tea', price: '₹200/L', image: '/Matcha Green Tea.jpg', category:'Juices and Beverages'},
+  { id: 75, name: 'Coconut Kefir', price: '₹200/L', image: '/Coconut Kefir.jpg', category:'Juices and Beverages'},
+  { id: 76, name: 'Kombucha', price: '₹200/L', image: '/Kombucha.jpg', category:'Juices and Beverages'},
+  { id: 77, name: 'Cinnamon Spiced Apple Cider', price: '₹200/L', image: '/Cinnamon Spiced Apple Cider.jpg', category:'Juices and Beverages'},
+  { id: 78, name: 'Ginger Lemongrass Tonic', price: '₹200/L', image: '/Ginger Lemongrass Tonic.jpg', category:'Juices and Beverages'},
+  { id: 79, name: 'Hibiscus Iced Tea', price: '₹200/L', image: '/Hibiscus Iced Tea.jpg', category:'Juices and Beverages'},
+  { id: 80, name: 'Moringa Superfood Drink', price: '₹200/L', image: '/Moringa Superfood Drink.jpg', category:'Juices and Beverages'},
+  { id: 81, name: 'Pear & Celery Detox Juice', price: '₹200/L', image: '/Pear & Celery Detox Juice.jpg', category:'Juices and Beverages'},
+  { id: 82, name: 'Strawberry Basil Refresher', price: '₹200/L', image: '/Strawberry Basil Refresher.jpg', category:'Juices and Beverages'},
+  { id: 83, name: 'Lavendar honey iced tea', price: '₹200/L', image: '/Lavendar honey iced tea.jpg', category:'Juices and Beverages'},
+  { id: 84, name: 'Oatmeal Honey Drink', price: '₹200/L', image: '/Oatmeal Honey Drink.jpg', category:'Juices and Beverages'},
+  { id: 85, name: 'Fig & Date Energy Juice', price: '₹200/L', image: '/Fig & Date Energy Juice.jpg', category:'Juices and Beverages'},
+
+  
+
+  
+
+  
+
+
 ];
 
 export default function Dashboard() {
