@@ -1,10 +1,6 @@
 import { useState } from 'react';
-import { Home, Leaf, ShoppingCart, User } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from "../context/AuthContext";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Star } from 'lucide-react';
+import './Market.css';
 
 const products = [
   { id: 1, name: 'Organic Apples', price: '₹100/kg', image: '/apple.jpg', category: 'Fruits' },
@@ -51,22 +47,26 @@ const products = [
   { id: 42, name: 'Butter', price: '₹150/kg', image: '/Butter.jpeg', category: 'Dairy Products' },
   { id: 43, name: 'Paneer', price: '₹150/kg', image: '/Paneer.jpeg', category: 'Dairy Products' },
   { id: 44, name: 'Butter Milk', price: '₹150/kg', image: '/ButterMilk.jpeg', category: 'Dairy Products' },
-  { id: 45, name: 'Custard', price: '₹150/kg', image: '/Custard.jpg', category: 'Dairy Products' },
+  { id: 45, name: 'Custard', price: '₹150/kg', image: '/Custard.jpeg', category: 'Dairy Products' },
   { id: 46, name: 'Curd', price: '₹150/kg', image: '/Curd.jpeg', category: 'Dairy Products' },
   { id: 47, name: 'Condensed Milk', price: '₹150/kg', image: '/CondensedMilk.jpeg', category: 'Dairy Products' },
   { id: 48, name: 'Cheese', price: '₹150/kg', image: '/Cheese.jpeg', category: 'Dairy Products' },
   { id: 49, name: 'Milk Powder', price: '₹150/kg', image: '/MilkPowder.jpeg', category: 'Dairy Products' },
-  { id: 50, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Dairy Products' },
-  { id: 51, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Dairy Products' },
-  { id: 52, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Dairy Products' },
-  { id: 53, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
-  { id: 54, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
-  { id: 55, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
-  { id: 56, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
-  { id: 57, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
-  { id: 58, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
-  { id: 59, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
-  { id: 60, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
+  { id: 50, name: 'Yogurt', price: '₹150/kg', image: '/Yogurt.jpeg', category: 'Dairy Products' },
+  { id: 51, name: 'Fresh Cream', price: '₹150/kg', image: '/FreshCream.jpeg', category: 'Dairy Products' },
+  { id: 52, name: 'Cardamom', price: '₹150/kg', image: '/Cardamom.jpg', category: 'Dairy Products' },
+  { id: 53, name: 'Cumin', price: '₹150/kg', image: '/Cumin.jpeg', category: 'Spices and Cordiments' },
+  { id: 54, name: 'Bay Leaf', price: '₹150/kg', image: '/BayLeaf.jpeg', category: 'Spices and Cordiments' },
+  { id: 55, name: 'Clove', price: '₹150/kg', image: '/Clove.jpg', category: 'Spices and Cordiments' },
+  { id: 56, name: 'Mustard', price: '₹150/kg', image: '/Mustard.jpg', category: 'Spices and Cordiments' },
+  { id: 57, name: 'Fennel', price: '₹150/kg', image: '/Fennel.jpg', category: 'Spices and Cordiments' },
+  { id: 58, name: 'Garam Masala', price: '₹150/kg', image: '/Garammasala.jpg', category: 'Spices and Cordiments' },
+  { id: 59, name: 'Pepper Corns', price: '₹150/kg', image: '/Peppercorns.jpg', category: 'Spices and Cordiments' },
+  { id: 60, name: 'Paprika', price: '₹150/kg', image: '/Paprika.jpeg', category: 'Spices and Cordiments' },
+  { id: 61, name: 'Fenugreek', price: '₹150/kg', image: '/Fenugreek.jpeg', category: 'Spices and Cordiments' },
+  { id: 62, name: 'Garlic', price: '₹150/kg', image: '/Garlic.jpeg', category: 'Spices and Cordiments' },
+  { id: 63, name: 'Anise', price: '₹150/kg', image: '/Anise.jpeg', category: 'Spices and Cordiments' },
+  { id: 64, name: 'Amchoor', price: '₹150/kg', image: '/Amchoor.jpeg', category: 'Spices and Cordiments' },
 ];
 
 export default function Dashboard() {
@@ -91,57 +91,48 @@ export default function Dashboard() {
   const filteredProducts = selectedCategory === 'All' ? products : products.filter(product => product.category === selectedCategory);
 
   return (
-    <div className="flex bg-gray-100 min-h-screen">
-      <main className="flex-1 p-6">
-        <header className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold">Products Dashboard</h1>
-          <Button onClick={toggleNotifications} className={notifications ? 'bg-green-500 text-white' : 'bg-black text-white'}>
-            {notifications ? 'Disable' : 'Enable'} Notifications
-          </Button>
-        </header>
-        <div className="flex gap-4 mb-4">
-          {categories.map((category) => (
-            <Button key={category} onClick={() => setSelectedCategory(category)} className={selectedCategory === category ? 'bg-green-500 text-white' : 'bg-black text-white'}>
-              {category}
-            </Button>
-          ))}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredProducts.map((product) => (
-            <Card 
-              key={product.id} 
-              className="p-4 text-center flex flex-col items-center justify-center h-full"
-            >
-              <div className="flex flex-col items-center justify-center">
-                <img 
-                  src={product.image} 
-                  alt={product.name} 
-                  className="w-32 h-32 object-contain mb-4 rounded-lg"
+    <div className="dashboard">
+      <header className="header">
+        <h1>Products Dashboard</h1>
+        <button onClick={toggleNotifications} className={notifications ? 'btn-active' : 'btn'}>
+          {notifications ? 'Disable' : 'Enable'} Notifications
+        </button>
+      </header>
+      <div className="categories">
+        {categories.map((category) => (
+          <button key={category} onClick={() => setSelectedCategory(category)} className={selectedCategory === category ? 'btn-active' : 'btn'}>
+            {category}
+          </button>
+        ))}
+      </div>
+      <div className="products-grid">
+        {filteredProducts.map((product) => (
+          <div key={product.id} className="card">
+            <img src={product.image} alt={product.name} className="product-img" />
+            <h3>{product.name}</h3>
+            <p className="price">{product.price}</p>
+            <div className="stars">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className={i < (ratings[product.id] || 0) ? 'star-filled' : 'star'}
+                  onClick={() => setRating(product.id, i + 1)}
                 />
-                <CardContent className="flex flex-col items-center justify-center">
-                  <h3 className="text-lg font-semibold">{product.name}</h3>
-                  <p className="text-xl font-bold">{product.price}</p>
-                  <div className="flex gap-1 mt-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-5 h-5 cursor-pointer ${i < (ratings[product.id] || 0) ? 'fill-yellow-500 text-yellow-500' : 'text-gray-300'}`}
-                        onClick={() => setRating(product.id, i + 1)}
-                      />
-                    ))}
-                  </div>
-                  <Button 
-                    className={`mt-2 ${cart[product.id] ? 'bg-black text-white' : 'bg-green-500 text-white'}`} 
-                    onClick={() => toggleCart(product.id)}
-                  >
-                    {cart[product.id] ? 'Remove from Cart' : 'Add to Cart'}
-                  </Button>
-                </CardContent>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </main>
+              ))}
+            </div>
+            <button 
+              className={cart[product.id] ? 'btn-remove' : 'btn-add'} 
+              onClick={() => toggleCart(product.id)}
+            >
+              {cart[product.id] ? 'Remove from Cart' : 'Add to Cart'}
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
+
+
+
+
