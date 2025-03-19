@@ -1,0 +1,280 @@
+/* General Page Styles */
+.contact-page {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f0fff4; /* Light greenish background */
+}
+
+/* Header */
+/* Header */
+.contact-header {
+  background-color: #c8f7c5; /* Soft pastel green */
+  text-align: center;
+  padding: 80px 0; /* Increased padding for more height */
+}
+
+.contact-header h1 {
+  font-size: 42px; /* Increased font size */
+  font-weight: bold;
+  color: #145c38; /* Deep green */
+}
+
+
+/* Contact Details Section */
+.contact-details {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  text-align: center;
+  padding: 40px 0;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.contact-item {
+  max-width: 250px;
+  background-color: #66bb6a; /* Brighter green */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+  margin: 10px; /* Add margin for spacing */
+}
+
+.contact-item h2 {
+  color: #ffeb3b; /* Yellowish text for contrast */
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.contact-item p {
+  color: #fff8e1; /* Light creamy color for better contrast */
+}
+
+.icon {
+  font-size: 28px;
+  color: #ffd54f; /* Warm golden yellow */
+}
+
+.contact-item:hover {
+  transform: scale(1.05);
+  background-color: #4caf50; /* Darker green on hover */
+}
+
+/* Contact Form */
+.contact-form-container {
+  background-color: #e3f2fd; /* Light blue for contrast */
+  padding: 50px;
+  text-align: center;
+}
+
+.contact-form-container h2 {
+  font-size: 24px;
+  color: #145c38;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  gap: 15px;
+}
+
+.form-group input {
+  flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #80deea; /* Soft cyan border */
+  border-radius: 5px;
+  background-color: #f1f8e9; /* Light greenish-white */
+}
+
+.contact-form textarea {
+  height: 100px;
+}
+
+.contact-form button {
+  background-color: #1a4d2e;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #145c38;
+}
+
+/* FAQ Section */
+.faq-section {
+  background-color: #fffde7; /* Light yellow */
+  padding: 50px;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 24px;
+  color: #145c38;
+  margin-bottom: 30px; /* Increased margin for better spacing */
+  font-weight: 600; /* Slightly bolder font for heading */
+}
+
+/* Search Bar */
+.faq-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.faq-search input {
+  padding: 12px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px;
+  width: 70%;
+  max-width: 500px;
+  background-color: #f9f9f9;
+  outline: none;
+}
+
+.faq-search button {
+  background: none;
+  border: none;
+  margin-left: -40px; /* Adjust to overlap input */
+  cursor: pointer;
+}
+
+.faq-search button img {
+  width: 20px;
+  height: 20px;
+}
+
+.faq-item {
+  text-align: left;
+  margin: 20px auto;
+  max-width: 600px;
+  border-bottom: 1px solid #e0e0e0; /* Add bottom border to separate items */
+  padding-bottom: 20px;
+}
+
+.faq-item h3 {
+  font-size: 18px;
+  color: #1a4d2e;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item h3::after {
+  content: '+'; /* Default state for plus sign */
+  font-size: 20px;
+  color: #1a4d2e;
+}
+
+.faq-item.expanded h3::after {
+  content: '-'; /* Change to minus sign when expanded */
+}
+
+.faq-item p {
+  color: #666; /* Slightly darker text for content */
+  line-height: 1.6;
+  margin-top: 10px;
+  display: none; /* Initially hide content */
+}
+
+.faq-item.expanded p {
+  display: block; /* Show content when expanded */
+}
+
+/* Featured Articles Section */
+.featured-articles {
+  background-color: #f8f8f8; /* Light gray background */
+  padding: 50px;
+  text-align: center;
+}
+
+.featured-articles h2 {
+  font-size: 24px;
+  color: #145c38;
+  margin-bottom: 30px;
+}
+
+.article-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.article-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.article-item h3 {
+  font-size: 18px;
+  color: #1a4d2e;
+  margin-bottom: 10px;
+}
+
+.article-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Google Map */
+.map-container {
+  width: 100%;
+  height: 400px;
+}
+
+.google-map {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Footer */
+/* Footer */
+.footer {
+  background-color: #1a4d2e;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+/* Align social media icons and text in one line */
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-link:hover {
+  color: #ffd54f; /* Warm golden yellow on hover */
+}
+
+.social-icon {
+  font-size: 20px;
+}
