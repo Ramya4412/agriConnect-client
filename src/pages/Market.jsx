@@ -67,7 +67,7 @@ const products = [
   { id: 62, name: 'Garlic', price: '₹150/kg', image: '/Garlic.jpeg', category: 'Spices and Condiments' },
   { id: 63, name: 'Anise', price: '₹150/kg', image: '/Anise.jpeg', category: 'Spices and Codiments' },
   { id: 64, name: 'Amchoor', price: '₹150/kg', image: '/Amchoor.jpeg', category: 'Spices and Condiments' },
-  { id: 65, name: 'Amchoor', price: '₹150/kg', image: '/Amchoor.jpeg', category: 'Spices and Condiments' },
+  
 ];
 
 export default function Dashboard() {
