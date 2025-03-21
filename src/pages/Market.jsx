@@ -42,12 +42,12 @@ const products = [
   { id: 37, name: 'Split chickpeas', price: '₹150/kg', image: '/Splitchickpeas.jpeg', category: 'Grains and Pulses' },
   { id: 38, name: 'Black Gram', price: '₹150/kg', image: '/BlackGram.jpeg', category: 'Grains and Pulses' },
   { id: 39, name: 'Black Beans', price: '₹150/kg', image: '/BlackBeans.jpeg', category: 'Grains and Pulses' },
-  { id: 40, name: 'Kulti Dal', price: '₹150/kg', image: '/KultiDal.jpg', category: 'Grains and Pulses' },
+  { id: 40, name: 'Kulti Dal', price: '₹150/kg', image: '/KultiDal.jpeg', category: 'Grains and Pulses' },
   { id: 41, name: 'Ghee', price: '₹150/kg', image: '/Ghee.jpeg', category: 'Dairy Products' },
   { id: 42, name: 'Butter', price: '₹150/kg', image: '/Butter.jpeg', category: 'Dairy Products' },
   { id: 43, name: 'Paneer', price: '₹150/kg', image: '/Paneer.jpeg', category: 'Dairy Products' },
   { id: 44, name: 'Butter Milk', price: '₹150/kg', image: '/ButterMilk.jpeg', category: 'Dairy Products' },
-  { id: 45, name: 'Custard', price: '₹150/kg', image: '/Custard.jpg', category: 'Dairy Products' },
+  { id: 45, name: 'Custard', price: '₹150/kg', image: '/Custard.jpeg', category: 'Dairy Products' },
   { id: 46, name: 'Curd', price: '₹150/kg', image: '/Curd.jpeg', category: 'Dairy Products' },
   { id: 47, name: 'Condensed Milk', price: '₹150/kg', image: '/CondensedMilk.jpeg', category: 'Dairy Products' },
   { id: 48, name: 'Cheese', price: '₹150/kg', image: '/Cheese.jpeg', category: 'Dairy Products' },
@@ -141,6 +141,7 @@ export default function Dashboard() {
                   key={i}
                   className={i < (ratings[product.id] || 0) ? 'star-filled' : 'star'}
                   onClick={() => setRating(product.id, i + 1)}
+                  fill={i < (ratings[product.id] || 0) ? 'gold' : 'none'}
                 />
               ))}
             </div>

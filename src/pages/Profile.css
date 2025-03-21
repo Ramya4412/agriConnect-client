@@ -1,0 +1,163 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    background-color: #f3f4f6;
+    min-height: 100vh;
+    gap: 20px;
+  }
+  
+  /* Profile Details Card */
+  .profile-card {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    border: 4px solid green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Ensures vertical centering */
+    text-align: center;
+  }
+  
+  .profile-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0e0d0d;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Profile Image */
+  .profile-picture {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px; /* Square shape */
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 auto 20px auto; /* Ensures horizontal centering */
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Input fields */
+  .profile-field {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 4px solid #111010;
+    width: 100%;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    color: green !important; /* Ensure it's always green */
+    margin-right: 10px;
+  }
+  
+  
+  .input-field {
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+    flex: 1;
+  }
+  
+  /* Edit Button */
+  .save-btn, .edit-btn {
+    width: 100%;
+    background-color: green;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .save-btn:hover, .edit-btn:hover {
+    background-color: darkgreen;
+  }
+  
+  /* Orders Section */
+  .order-card {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    border: 4px solid green;
+  }
+  
+  .order-heading {
+    font-size: 24px; /* Increase the font size */
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase; /* Optional: Make it all uppercase */
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 3px solid green; /* Adds a bold underline */
+    padding-bottom: 10px; /* Spacing below the heading */
+    letter-spacing: 1px; /* Optional: Adds spacing between letters */
+  }
+  
+  .shopping-btn {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .shopping-btn:hover {
+    background-color: darkgreen;
+  }
+  
+  /* Management Cards */
+  .manage-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    max-width: 1000px;
+    justify-content: center;
+  }
+  
+  .manage-card {
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    border: 4px solid green;
+    width: 220px;
+    height: 150px;
+  }
+  

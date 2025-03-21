@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "./LoginForm.css"; // Import your CSS file
+
 export default function LoginForm() {
   const nav = useNavigate();
   const { login, setUser } = useAuth();
   const [formData, setFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -16,82 +19,78 @@ export default function LoginForm() {
       [name]: value,
     }));
   };
+onabort
+async function handleSubmit(e) {
+  e.preventDefault();
+  try {
+    const res = await fetch("http://localhost:3000/users"); // Fetch users from backend
+    const resjson = await res.json();
+    
+    // Find user by username
+    const user = resjson.find((user) => user.username === formData.username);
 
-  async function handleSubmit(e){
-    e.preventDefault();
-    try{
-      const res = await fetch("http://localhost:3000/users");
-      console.log("some")
-      const resjson = await res.json();
-      const user = resjson.find((user) => user.email === formData.email);
-      console.log(user)
-      if (!user) {
-        alert("User not found");
-        return;
-      }
-      if(user.password !== formData.password){
-        alert("Incorrect password");
-        return;
-      }
-      login();
-      setUser(user);
-      nav("/")
-    }catch(err){
-      alert("Something went wrong: " + err);
+    if (!user) {
+      alert("User not found");
+      return;
     }
+
+    if (user.password !== formData.password) {
+      alert("Incorrect password");
+      return;
+    }
+
+    // Save user in context and localStorage
+    login(user);
+    nav("/");
+  } catch (err) {
+    alert("Something went wrong: " + err);
+  }
     console.log(formData);
-  };
+  }
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-
-      <div className="bg-white p-8 rounded-2xl shadow-lg w-96">
+    <div className="login-container">
+      <div className="login-card">
         <div className="flex justify-center mb-4">
-          <img src="./logo.png" alt="AgriConnect" className="w-20 h-20" />
+        <img src="./logo.png" alt="AgriConnect" className="logo w-24 h-24" />
         </div>
-        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
-          LOGIN
-        </h2>
-        <form onSubmit={handleSubmit} className="text-black">
+        <h2 className="login-title">LOGIN</h2>
+        <form onSubmit={handleSubmit} className="login-form">
           <div className="mb-4">
-            <label className="block text-gray-700 font-medium">Email:</label>
+            <label className="label">Username:</label>
             <input
-              type="email"
-              name="email"
-              value={formData.email}
+              type="text"
+              name="username"
+              value={formData.username}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="input-field"
             />
           </div>
 
           <div className="mb-4">
-            <label className="block text-gray-700 font-medium">Password:</label>
+            <label className="label">Password:</label>
             <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="input-field"
             />
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300"
-          >
+          <button type="submit" className="login-button">
             Login
           </button>
         </form>
 
-        <div className="mt-4 text-center text-sm text-gray-600">
+        <div className="login-footer">
           <p className="hover:text-blue-600 cursor-pointer">Forgot your password?</p>
           <p>
-            Not registered yet?{" "}
-            <a href="#" className="text-blue-600 hover:underline">
-              Sign up
-            </a>
-          </p>
-          
+  Not registered yet?{" "}
+  <Link to="/signup" className="hover:underline">
+    Sign up
+  </Link>
+</p>
         </div>
       </div>
     </div>

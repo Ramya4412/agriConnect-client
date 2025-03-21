@@ -1,3 +1,5 @@
+import "./KeyFeatures.css";
+
 export default function KeyFeatures() {
   const features = [
     {
@@ -46,29 +48,23 @@ export default function KeyFeatures() {
       logo: 'https://th.bing.com/th?q=Secure+Payment+Guaranteed+Clip+Art&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.3&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247'
     },
     {
-      title: 'Delivery and Logistics', // Move this card to the last row, middle position
+      title: 'Delivery and Logistics',
       description: 'Local delivery network and pickup locations.',
       logo: 'https://farmyields.io/wp-content/uploads/2022/06/Frame-1000001896-min.png'
     }
   ];
 
   return (
-    <section className="key-features p-8">
-      {/* Bold Key Features Heading */}
-      <h2 className="text-3xl font-bold text-center mb-6">Key Features</h2>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <section className="key-features">
+      <h2 className="key-features-title">Key Features</h2>
+      <div className="features-grid">
         {features.map((feature, index) => (
-          <div 
-            key={index} 
-            className="feature bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center h-64"
-          >
-            {/* Centering Logo */}
-            <div className="flex justify-center items-center w-24 h-24 mb-4">
-              <img src={feature.logo} alt={`${feature.title} Logo`} className="w-full h-full object-contain" />
+          <div key={index} className="feature-card feature-card-large">
+            <div className="feature-logo-container">
+              <img src={feature.logo} alt={`${feature.title} Logo`} className="feature-logo" />
             </div>
-            <h3 className="text-lg font-semibold">{feature.title}</h3>
-            <p className="text-gray-600">{feature.description}</p>
+            <h3 className="feature-title">{feature.title}</h3>
+            <p className="feature-description">{feature.description}</p>
           </div>
         ))}
       </div>
