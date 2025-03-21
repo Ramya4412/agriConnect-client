@@ -42,16 +42,17 @@ const products = [
   { id: 37, name: 'Split chickpeas', price: '₹150/kg', image: '/Splitchickpeas.jpeg', category: 'Grains and Pulses' },
   { id: 38, name: 'Black Gram', price: '₹150/kg', image: '/BlackGram.jpeg', category: 'Grains and Pulses' },
   { id: 39, name: 'Black Beans', price: '₹150/kg', image: '/BlackBeans.jpeg', category: 'Grains and Pulses' },
-  { id: 40, name: 'Kulti Dal', price: '₹150/kg', image: '/KultiDal.jpeg', category: 'Grains and Pulses' },
+  { id: 40, name: 'Kulti Dal', price: '₹150/kg', image: '/KultiDal.jpg', category: 'Grains and Pulses' },
   { id: 41, name: 'Ghee', price: '₹150/kg', image: '/Ghee.jpeg', category: 'Dairy Products' },
   { id: 42, name: 'Butter', price: '₹150/kg', image: '/Butter.jpeg', category: 'Dairy Products' },
   { id: 43, name: 'Paneer', price: '₹150/kg', image: '/Paneer.jpeg', category: 'Dairy Products' },
   { id: 44, name: 'Butter Milk', price: '₹150/kg', image: '/ButterMilk.jpeg', category: 'Dairy Products' },
-  { id: 45, name: 'Custard', price: '₹150/kg', image: '/Custard.jpeg', category: 'Dairy Products' },
+  { id: 45, name: 'Custard', price: '₹150/kg', image: '/Custard.jpg', category: 'Dairy Products' },
   { id: 46, name: 'Curd', price: '₹150/kg', image: '/Curd.jpeg', category: 'Dairy Products' },
   { id: 47, name: 'Condensed Milk', price: '₹150/kg', image: '/CondensedMilk.jpeg', category: 'Dairy Products' },
   { id: 48, name: 'Cheese', price: '₹150/kg', image: '/Cheese.jpeg', category: 'Dairy Products' },
   { id: 49, name: 'Milk Powder', price: '₹150/kg', image: '/MilkPowder.jpeg', category: 'Dairy Products' },
+<<<<<<< HEAD
   { id: 50, name: 'Yogurt', price: '₹150/kg', image: '/Yogurt.jpeg', category: 'Dairy Products' },
   { id: 51, name: 'Fresh Cream', price: '₹150/kg', image: '/FreshCream.jpeg', category: 'Dairy Products' },
   { id: 52, name: 'Cardamom', price: '₹150/kg', image: '/Cardamom.jpg', category: 'Dairy Products' },
@@ -68,6 +69,44 @@ const products = [
   { id: 63, name: 'Anise', price: '₹150/kg', image: '/Anise.jpeg', category: 'Spices and Codiments' },
   { id: 64, name: 'Amchoor', price: '₹150/kg', image: '/Amchoor.jpeg', category: 'Spices and Condiments' },
   
+=======
+  { id: 50, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Dairy Products' },
+  { id: 51, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Dairy Products' },
+  { id: 52, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Dairy Products' },
+  { id: 53, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
+  { id: 54, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
+  { id: 55, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
+  { id: 56, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
+  { id: 57, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
+  { id: 58, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
+  { id: 59, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
+  { id: 60, name: 'Spinach', price: '₹150/kg', image: '/Spinach.jpg', category: 'Vegetables' },
+  { id: 61, name: 'Sun-kist', price: '₹450/L', image: '/Sun-kist.jpg', category:'Juices and Beverages'},
+  { id: 62, name: 'Berry bliss', price: '₹300/L', image: '/Berry bliss.jpg', category:'Juices and Beverages'},
+  { id: 63, name: 'Tropical hormony', price: '₹400/L', image: '/Tropical hormony.jpg', category:'Juices and Beverages'},
+  { id: 64, name: 'Golden Glow', price: '₹350/L', image: '/Golden Glow.jpg', category:'Juices and Beverages'},
+  { id: 65, name: 'Pomogranate power', price: '₹250/L', image: '/pomogranate power.jpg', category:'Juices and Beverages'},
+  { id: 66, name: 'Herbal infuse', price: '₹200/L', image: '/herbal infuse.jpg', category:'Juices and Beverages'},
+  { id: 67, name: 'Golden Root Tonic', price: '₹200/L', image: '/Golden Root Tonic.jpg', category:'Juices and Beverages'},
+  { id: 68, name: 'Revive Brew', price: '₹250/L', image: '/Revive Brew.jpg', category:'Juices and Beverages'},
+  { id: 69, name: 'Zen Bloom', price: '₹250/L', image: '/Zen Bloom.jpg', category:'Juices and Beverages'},
+  { id: 70, name: 'Calm Elixir', price: '₹200/L', image: '/Calm Elixir.jpg', category:'Juices and Beverages'},
+  { id: 71, name: 'Golden termeric latte', price: '₹200/L', image: '/Golden termeric latte.jpg', category:'Juices and Beverages'},
+  { id: 72, name: 'Lemon Honey Detox Water', price: '₹200/L', image: '/Lemon Honey Detox Water.jpg', category:'Juices and Beverages'},
+  { id: 74, name: 'Matcha Green Tea', price: '₹200/L', image: '/Matcha Green Tea.jpg', category:'Juices and Beverages'},
+  { id: 75, name: 'Coconut Kefir', price: '₹200/L', image: '/Coconut Kefir.jpg', category:'Juices and Beverages'},
+  { id: 76, name: 'Kombucha', price: '₹200/L', image: '/Kombucha.jpg', category:'Juices and Beverages'},
+  { id: 77, name: 'Cinnamon Spiced Apple Cider', price: '₹200/L', image: '/Cinnamon Spiced Apple Cider.jpg', category:'Juices and Beverages'},
+  { id: 78, name: 'Ginger Lemongrass Tonic', price: '₹200/L', image: '/Ginger Lemongrass Tonic.jpg', category:'Juices and Beverages'},
+  { id: 79, name: 'Hibiscus Iced Tea', price: '₹200/L', image: '/Hibiscus Iced Tea.jpg', category:'Juices and Beverages'},
+  { id: 80, name: 'Moringa Superfood Drink', price: '₹200/L', image: '/Moringa Superfood Drink.jpg', category:'Juices and Beverages'},
+  { id: 81, name: 'Pear & Celery Detox Juice', price: '₹200/L', image: '/Pear & Celery Detox Juice.jpg', category:'Juices and Beverages'},
+  { id: 82, name: 'Strawberry Basil Refresher', price: '₹200/L', image: '/Strawberry Basil Refresher.jpg', category:'Juices and Beverages'},
+  { id: 83, name: 'Lavendar honey iced tea', price: '₹200/L', image: '/Lavendar honey iced tea.jpg', category:'Juices and Beverages'},
+  { id: 84, name: 'Oatmeal Honey Drink', price: '₹200/L', image: '/Oatmeal Honey Drink.jpg', category:'Juices and Beverages'},
+  { id: 85, name: 'Fig & Date Energy Juice', price: '₹200/L', image: '/Fig & Date Energy Juice.jpg', category:'Juices and Beverages'},
+
+>>>>>>> 4624a7445c14530c5cf2424a4c23a9ea42e9511d
 ];
 
 export default function Dashboard() {
@@ -88,7 +127,7 @@ export default function Dashboard() {
     setNotifications((prev) => !prev);
   };
 
-  const categories = ['All', 'Fruits', 'Vegetables', 'Grains and Pulses', 'Dairy Products', 'Spices and Condiments', 'Juices and Beverages'];
+  const categories = ['All', 'Fruits', 'Vegetables', 'Grains and Pulses', 'Dairy Products','Spices and Condiments','Juices and Beverages'];
   const filteredProducts = selectedCategory === 'All' ? products : products.filter(product => product.category === selectedCategory);
 
   return (
@@ -133,7 +172,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
-
-
-

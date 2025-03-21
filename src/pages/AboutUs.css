@@ -1,0 +1,169 @@
+.about-container {
+    background-color: #f0fdf4;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  /* Section Titles */
+.vision-title,
+.mission-title,
+.why-title,
+.impact-title,
+.farmers-title,
+.testimonials-title,
+.contact-title {
+  font-size: 36px; /* Bigger for a broad effect */
+  font-weight: bold;
+  font-family: Impact, "Arial Black", Tahoma, sans-serif; /* No need to import */
+  color: #1b4332;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase; /* Optional: Makes text more prominent */
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+  .vision-title::after,
+  .mission-title::after,
+  .why-title::after,
+  .impact-title::after,
+  .farmers-title::after,
+  .testimonials-title::after,
+  .contact-title::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: #2d6a4f;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 2px;
+  }
+  
+  /* Paragraph Text */
+  .about-text {
+    font-size: 18px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Feature List Styling */
+  .about-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .about-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd; /* Adds a separator line */
+  }
+  
+  .icon {
+    min-width: 30px;
+  }
+  
+  .text {
+    flex: 1;
+    text-align: left;
+    padding-left: 10px;
+  }
+  
+  .dash {
+    min-width: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .description {
+    flex: 2;
+    text-align: left;
+  }
+  
+  /* Image Card Styling */
+  .image-card {
+    width: 250px; /* Set a fixed square width */
+    height: 250px; /* Set the same height to make it a square */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures images don’t overflow */
+  }
+  
+  .about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the square without distortion */
+    border-radius: 10px;
+  }
+  
+  
+  /* Impact Grid Section */
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  .impact-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    color: #2d6a4f;
+  }
+  
+  /* Farmers Section */
+  .farmers-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .farmer-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+  }
+  
+  .farmer-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Testimonials */
+  .testimonial {
+    font-style: italic;
+    color: #2d6a4f;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Contact Info */
+  .contact-info {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1b4332;
+  }
+  

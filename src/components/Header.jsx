@@ -14,7 +14,7 @@ export default function Header() {
       
         <ul className="hidden md:flex gap-4 space-x-6">
           <li><Link to="/" className="hover:text-green-300 transition">Home</Link></li>
-          <li><Link to="/about" className="hover:text-green-300 transition">About</Link></li>
+          <li><Link to="/aboutus" className="hover:text-green-300 transition">AboutUs</Link></li>
           <li><Link to="/contact" className="hover:text-green-300 transition">Contact</Link></li>
           <li><Link to="/market" className="hover:text-green-300 transition">Market</Link></li>
         </ul>
