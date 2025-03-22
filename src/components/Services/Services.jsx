@@ -1,31 +1,33 @@
+import "./Services.css";
+
 export default function Services() {
   return (
-    <section id="services" className="min-h-screen flex flex-col items-center justify-center bg-gray-200 p-6">
-      <h2 className="text-3xl font-bold text-black-800 mb-50">Our Services</h2> {/* Increased margin-bottom (mb-16) for more gap */}
-      <div className="h-5"></div>
-      <div className="flex flex-col items-center gap-12"> {/* Increased gap between cards */}
+    <section id="services" className="services-section">
+      <h2 className="services-title">Our Services</h2>
+      <div className="spacer"></div>
+      <div className="services-container">
         {/* First Service */}
-        <div className="flex flex-col items-center text-center gap-4">
-          <h3 className="text-xl font-bold text-gray-800">Precision Farming</h3>
-          <p className="text-gray-600">Using data-driven insights for better yield.</p>
-          <div className="bg-white rounded-lg shadow-lg p-4 w-80">
+        <div className="service-card">
+          <h3 className="service-title">Precision Farming</h3>
+          <p className="service-text">Using data-driven insights for better yield.</p>
+          <div className="service-image-container">
             <img 
               src="https://www.fieldbee.com/wp-content/uploads/2021/12/5.jpg" 
               alt="Precision Farming" 
-              className="w-full h-40 object-cover rounded-lg"
+              className="service-image"
             />
           </div>
         </div>
 
         {/* Second Service */}
-        <div className="flex flex-col items-center text-center gap-4">
-          <h3 className="text-xl font-bold text-gray-800">Agri-Tech Solutions</h3>
-          <p className="text-gray-600">Smart devices to monitor crop health.</p>
-          <div className="bg-white rounded-lg shadow-lg p-4 w-80">
+        <div className="service-card">
+          <h3 className="service-title">Agri-Tech Solutions</h3>
+          <p className="service-text">Smart devices to monitor crop health.</p>
+          <div className="service-image-container">
             <img 
               src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201909/agri_tech.jpeg" 
               alt="Agri-Tech Solutions" 
-              className="w-full h-40 object-cover rounded-lg"
+              className="service-image"
             />
           </div>
         </div>

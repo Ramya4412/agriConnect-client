@@ -1,0 +1,85 @@
+/* Header Container */
+.header {
+  background-color: #022710;
+  color: white;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures items are spaced out */
+}
+
+/* Logo & Title (AgriConnect) - Now on the Left */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and title */
+}
+
+.logo {
+  height: 40px; /* Adjust logo size */
+  width: auto;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  margin-left: auto; /* Pushes the nav to the right */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #86efac; /* Light green */
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 16px;
+  margin-left: 20px; /* Ensures spacing from navigation */
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none; /* Hide on small screens */
+      flex-direction: column;
+      background-color: #166534;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 60px;
+      padding: 10px 0;
+      text-align: center;
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .menu-toggle {
+      display: block;
+  }
+}
+
+  

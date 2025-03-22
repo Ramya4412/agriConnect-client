@@ -14,12 +14,13 @@ body {
 
 .header {
   display: flex;
-  top: flex-end;
-  align-items: top;
-  padding: 1px;
+  justify-content: space-between; /* Ensures elements spread out properly */
+  align-items: center; /* Aligns items in the header */
+  padding: 10px 20px;
   background-color: #4b7a3b;
   color: white;
 }
+
 
 .login-signup {
   display: flex;

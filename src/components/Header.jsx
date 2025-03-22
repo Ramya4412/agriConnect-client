@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./Header.css";
 import { useAuth } from "../context/AuthContext";
 
 export default function Header() {
@@ -7,10 +8,16 @@ export default function Header() {
   return (
     <nav className="bg-green-800 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold tracking-wide">
-          AgriConnect
-        </Link>
-
+      <div className="flex items-center space-x-3">
+          <img 
+            src="/logo.png"  // Replace with your actual logo path
+            alt="AgriConnect Logo"
+            className="h-10 w-10 object-contain"
+          />
+          <Link to="/" className="text-2xl font-bold tracking-wide">
+            AgriConnect
+          </Link>
+        </div>
       
         <ul className="hidden md:flex gap-4 space-x-6">
           <li><Link to="/" className="hover:text-green-300 transition">Home</Link></li>

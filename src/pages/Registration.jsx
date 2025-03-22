@@ -8,7 +8,7 @@ export default function MultiStepRegistration() {
     fullName: "",
     email: "",
     phoneNumber: "",
-    address: "",
+    doorNumber: "",
     city: "",
     state: "",
     zipCode: "",
@@ -19,6 +19,7 @@ export default function MultiStepRegistration() {
     soilType: "",
     irrigationMethod: "",
     experience: "",
+    username: "",
     password: "",
     confirmPassword: ""
   });
@@ -34,22 +35,32 @@ export default function MultiStepRegistration() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
+
     try {
       const res = await fetch("http://localhost:3000/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      if (res.ok) {
-        setRegistrationSuccess(true);
-        setTimeout(() => navigate("/LoginForm"), 2000);
+      
+      const responseData = await res.json();
+      console.log("Server Response:", responseData);
+      
+      if (!res.ok) {
+        throw new Error(responseData.message || "Failed to register.");
       }
+      
+
+      setRegistrationSuccess(true);
+      setTimeout(() => navigate("/LoginForm"), 2000);
     } catch (err) {
-      alert("Something went wrong: " + err);
+      console.error("Registration error:", err);
+      alert("Something went wrong: " + err.message);
     }
   }
 
@@ -57,7 +68,6 @@ export default function MultiStepRegistration() {
     <div className="min-h-screen flex items-center justify-center bg-green-100">
       <form className="bg-white p-6 rounded-lg shadow-lg w-96" onSubmit={handleSubmit}>
         <h2 className="text-2xl font-bold text-green-700 mb-4">Register</h2>
-
         {registrationSuccess ? (
           <p className="text-green-700 text-center font-bold">Registration successful! Redirecting...</p>
         ) : (
@@ -81,8 +91,8 @@ export default function MultiStepRegistration() {
 
             {step === 2 && (
               <>
-                <label className="block text-green-800">Address</label>
-                <input type="text" name="address" value={formData.address} onChange={handleChange} className="w-full p-2 border rounded mb-2" required />
+                <label className="block text-green-800">Door Number</label>
+                <input type="text" name="doorNumber" value={formData.doorNumber} onChange={handleChange} className="w-full p-2 border rounded mb-2" required />
                 <label className="block text-green-800">City</label>
                 <input type="text" name="city" value={formData.city} onChange={handleChange} className="w-full p-2 border rounded mb-2" required />
                 <label className="block text-green-800">State</label>
@@ -90,12 +100,11 @@ export default function MultiStepRegistration() {
                 <label className="block text-green-800">Zip Code</label>
                 <input type="text" name="zipCode" value={formData.zipCode} onChange={handleChange} className="w-full p-2 border rounded mb-2" required />
                 <div className="flex justify-between mt-4">
-                  <button type="button" onClick={prevStep} className="bg-gray-500 text-white p-2 rounded">Back</button>
+                  <button type="button" onClick={prevStep} className="bg-green-700 text-white p-2 rounded">Back</button>
                   <button type="button" onClick={nextStep} className="bg-green-700 text-white p-2 rounded">Next</button>
                 </div>
               </>
             )}
-
             {step === 3 && (
               <>
                 {formData.role === "producer" ? (
@@ -111,18 +120,24 @@ export default function MultiStepRegistration() {
                     <label className="block text-green-800">Irrigation Method</label>
                     <input type="text" name="irrigationMethod" value={formData.irrigationMethod} onChange={handleChange} className="w-full p-2 border rounded mb-2" required />
                     <div className="flex justify-between mt-4">
-                      <button type="button" onClick={prevStep} className="bg-gray-500 text-white p-2 rounded">Back</button>
+                      <button type="button" onClick={prevStep} className="bg-green-700 text-white p-2 rounded">Back</button>
                       <button type="button" onClick={nextStep} className="bg-green-700 text-white p-2 rounded">Next</button>
                     </div>
                   </>
                 ) : (
                   <>
                     {/* Consumer sees the register button here */}
+                    <label className="block text-green-800">Username</label>
+                    <input type="text" name="username" value={formData.username} onChange={handleChange} className="w-full p-2 border rounded mb-2" required />
                     <label className="block text-green-800">Password</label>
                     <input type="password" name="password" value={formData.password} onChange={handleChange} className="w-full p-2 border rounded mb-2" required />
                     <label className="block text-green-800">Confirm Password</label>
                     <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} className="w-full p-2 border rounded mb-2" required />
-                    <button type="submit" className="w-full bg-green-700 text-white p-2 rounded hover:bg-green-800 transition mt-4">Register</button>
+                    <div className="flex justify-between mt-4">
+                      <button type="button" onClick={prevStep} className="bg-green-700 text-white p-2 rounded">Back</button>
+                    </div>
+                    <button type="submit" className="bg-green-700 text-white p-2 rounded">Register</button>
+
                   </>
                 )}
               </>
@@ -130,11 +145,17 @@ export default function MultiStepRegistration() {
 
             {step === 4 && formData.role === "producer" && (
               <>
+                <label className="block text-green-800">Username</label>
+                <input type="text" name="username" value={formData.username} onChange={handleChange} className="w-full p-2 border rounded mb-2" required />
                 <label className="block text-green-800">Password</label>
                 <input type="password" name="password" value={formData.password} onChange={handleChange} className="w-full p-2 border rounded mb-2" required />
                 <label className="block text-green-800">Confirm Password</label>
                 <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} className="w-full p-2 border rounded mb-2" required />
-                <button type="submit" className="w-full bg-green-700 text-white p-2 rounded hover:bg-green-800 transition mt-4">Register</button>
+                <div className="flex justify-between mt-4">
+                      <button type="button" onClick={prevStep} className="bg-gray-500 text-white p-2 rounded">Back</button>
+                    </div>
+                    <button type="submit" className="bg-green-700 text-white p-2 rounded">Register</button>
+
               </>
             )}
           </>
