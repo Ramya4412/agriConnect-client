@@ -1,85 +1,119 @@
-/* Header Container */
-.header {
-  background-color: #022710;
+/* Top Bar - Smaller Size */
+.top-bar {
+  background-color: #333;
   color: white;
-  padding: 5px 20px;
+  padding: 4px 15px; /* Reduced padding */
+  font-size: 14px; /* Smaller text */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Language Selector */
+.language-selector {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Ensures items are spaced out */
+  gap: 6px;
 }
 
-/* Logo & Title (AgriConnect) - Now on the Left */
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Space between logo and title */
-}
-
-.logo {
-  height: 40px; /* Adjust logo size */
-  width: auto;
-}
-
-.heading {
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-}
-
-/* Navigation Links */
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 24px;
-  margin-left: auto; /* Pushes the nav to the right */
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s;
-}
-
-.nav-links li a:hover {
-  color: #86efac; /* Light green */
+.language-selector select {
+  font-size: 12px; /* Reduce dropdown text size */
+  color: black; /* Ensure text color is black */
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 2px 5px;
+  cursor: pointer;
 }
 
 /* Auth Buttons */
 .auth-buttons {
   display: flex;
-  gap: 16px;
-  margin-left: 20px; /* Ensures spacing from navigation */
+  gap: 12px;
+}
+
+/* Login & Sign Up Buttons - Same Color */
+.auth-buttons .login,
+.auth-buttons .signup {
+  padding: 6px 12px; /* Adjusted padding */
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #028a0f; /* Green button */
+  color: black !important; /* Ensure text color is black */
+  border: none;
+  border-radius: 4px;
+  text-align: center; /* Center the text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px; /* Set a fixed width to maintain center alignment */
+  transition: background-color 0.3s ease;
+}
+
+.auth-buttons .login:hover,
+.auth-buttons .signup:hover {
+  background-color: #026b0d; /* Darker green on hover */
+}
+
+/* Navbar - Smaller Height */
+.navbar {
+  background-color: white;
+  color: #333;
+  padding: 6px 15px; /* Reduce padding */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Container */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo & Branding */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  height: 30px; /* Reduce logo size */
+  width: auto;
+}
+
+/* AGRICONNECT Heading - Bold */
+.brand-title {
+  font-size: 20px;
+  font-weight: bold; /* Make the title bold */
+  color: #025a0d; /* Keep it green */
+}
+
+/* Navigation Links */
+.nav-links {
+  font-size: 14px; /* Reduce nav link text size */
+}
+
+/* HOME, ABOUTUS, CONTACT, MARKET - Black */
+.nav-links li a {
+  padding: 4px 8px;
+  color: black !important; /* Ensure black color */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Active Link - Highlighted Color */
+.nav-links li a.active {
+  color: #028a0f !important; /* Green color for active tab */
+  font-weight: bold;
+  border-bottom: 2px solid #028a0f; /* Underline effect */
+}
+
+/* Hover Effect */
+.nav-links li a:hover {
+  color: #025a0d;
 }
 
 /* Mobile Menu Button */
 .menu-toggle {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
+  font-size: 20px; /* Reduce icon size */
 }
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .nav-links {
-      display: none; /* Hide on small screens */
-      flex-direction: column;
-      background-color: #166534;
-      position: absolute;
-      width: 100%;
-      left: 0;
-      top: 60px;
-      padding: 10px 0;
-      text-align: center;
-  }
-
-  .nav-links.active {
-      display: flex;
-  }
-
-  .menu-toggle {
-      display: block;
-  }
-}
-
-  

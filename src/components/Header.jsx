@@ -1,51 +1,91 @@
 import { Link } from "react-router-dom";
-import "./Header.css";
+import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
+import { FaUser, FaGlobe } from "react-icons/fa"; // Icons
+import { NavLink } from "react-router-dom";
+import "./Header.css"; // Import CSS file
 
 export default function Header() {
-  const {isLoggedIn, login, logout, setUser, loggedUser} = useAuth();
+  const { isLoggedIn, logout } = useAuth();
+  const [language, setLanguage] = useState("EN");
+
+  const handleLanguageChange = (e) => {
+    setLanguage(e.target.value);
+    localStorage.setItem("selectedLanguage", e.target.value);
+  };
 
   return (
-    <nav className="bg-green-800 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
-      <div className="flex items-center space-x-3">
-          <img 
-            src="/logo.png"  // Replace with your actual logo path
-            alt="AgriConnect Logo"
-            className="h-10 w-10 object-contain"
-          />
-          <Link to="/" className="text-2xl font-bold tracking-wide">
-            AgriConnect
-          </Link>
-        </div>
-      
-        <ul className="hidden md:flex gap-4 space-x-6">
-          <li><Link to="/" className="hover:text-green-300 transition">Home</Link></li>
-          <li><Link to="/aboutus" className="hover:text-green-300 transition">AboutUs</Link></li>
-          <li><Link to="/contact" className="hover:text-green-300 transition">Contact</Link></li>
-          <li><Link to="/market" className="hover:text-green-300 transition">Market</Link></li>
-        </ul>
-
-        {/* Login / Signup Buttons */}
-        <div className="space-x-4 hidden md:flex">
-          {isLoggedIn && <Link to="/profile" className="bg-white text-green-800 px-4 py-2 rounded-lg font-bold hover:bg-gray-200 transition">
-            Edit Profile</Link>}
-          {isLoggedIn&& <Link onClick={logout}>Logout</Link>}
-          {!isLoggedIn &&<Link to="/LoginForm" className="bg-white text-green-800 px-4 py-2 rounded-lg font-bold hover:bg-gray-200 transition">
-            Login
-          </Link>
-}
-          {!isLoggedIn && <Link to="/signup" className="bg-green-600 px-4 py-2 rounded-lg font-bold hover:bg-green-700 transition">
-            Sign Up
-          </Link>
-}
+    <>
+      {/* Top Bar (Language + Auth) */}
+      <div className="top-bar">
+        {/* Language Dropdown */}
+        <div className="language-selector">
+          <FaGlobe />
+          <select value={language} onChange={handleLanguageChange}>
+            <option value="EN">Language (EN)</option>
+            <option value="TE">తెలుగు (TE)</option>
+            <option value="HI">हिन्दी (HI)</option>
+            <option value="TA">தமிழ் (TA)</option>
+          </select>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button className="text-white text-2xl">&#9776;</button>
+        {/* Login / Signup */}
+        <div className="auth-buttons">
+          {!isLoggedIn ? (
+            <>
+              <Link to="/LoginForm" className="login">Login</Link>
+              <Link to="/signup" className="signup">Sign Up</Link>
+            </>
+          ) : (
+            <>
+              <Link to="/profile" className="profile">
+                <FaUser /> <span>Profile</span>
+              </Link>
+              <button onClick={logout} className="logout">Logout</button>
+            </>
+          )}
         </div>
       </div>
-    </nav>
+
+      {/* Main Navbar */}
+      <nav className="navbar">
+        <div className="navbar-container">
+          {/* Logo */}
+          <div className="logo-container">
+            <img src="/logo.png" alt="Agri Marketplace Logo" className="logo" />
+            <Link to="/" className="brand-title">AGRICONNECT</Link>
+          </div>
+
+          {/* Navigation Links */}
+          <ul className="nav-links">
+  <li>
+    <NavLink to="/" exact activeClassName="active">
+      HOME
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/aboutus" activeClassName="active">
+      ABOUTUS
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/contact" activeClassName="active">
+      CONTACT
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/market" activeClassName="active">
+      MARKET
+    </NavLink>
+  </li>
+</ul>
+
+          {/* Mobile Menu Button */}
+          <div className="menu-toggle">
+            <button>&#9776;</button>
+          </div>
+        </div>
+      </nav>
+    </>
   );
 }

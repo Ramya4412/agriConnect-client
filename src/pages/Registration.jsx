@@ -18,7 +18,6 @@ export default function MultiStepRegistration() {
     cropType: "",
     soilType: "",
     irrigationMethod: "",
-    experience: "",
     username: "",
     password: "",
     confirmPassword: ""
